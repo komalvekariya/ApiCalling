@@ -1,12 +1,17 @@
 import React from 'react';
+<<<<<<< HEAD
 import { FlatList, StyleSheet,PixelRatio,TouchableOpacity,ActivityIndicator, Text, View, Image } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
+=======
+import { FlatList, ActivityIndicator, Text, View, Image } from 'react-native';
+>>>>>>> 53521772449115b38cdf6450f2969eb4c96d8ddd
 
 var FileUpload = require('NativeModules').FileUpload;
 export default class FetchExample extends React.Component {
 
   constructor(props) {
     super(props);
+<<<<<<< HEAD
     this.state = {
       isLoading: true,
       avatarSource: null,
@@ -24,6 +29,20 @@ export default class FetchExample extends React.Component {
       }
     };
 
+=======
+    this.state = { isLoading: true }
+  }
+
+  componentDidMount() {
+    return fetch('https://reqres.in/api/users/2')
+      .then((response) => response.json())
+      .then((responseJson) => {
+
+        this.setState({
+          isLoading: false,
+          dataSource: responseJson,
+        }, function () {
+>>>>>>> 53521772449115b38cdf6450f2969eb4c96d8ddd
 
     ImagePicker.showImagePicker(options, (response) => {
       console.log('Response = ', response);
